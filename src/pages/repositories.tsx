@@ -3,11 +3,8 @@ import { useParams } from 'react-router-dom'
 
 import api from '../services/api'
 import Card from '../components/card'
-
-interface Repo {
-    id: number
-    name: string
-}
+import { Repo } from '../types/repo'
+import { Container } from '../styles/pages/repositories'
 
 export default function Repositories () {
     const [repositories, setRepositories] = useState<Repo[]>([])
@@ -19,8 +16,8 @@ export default function Repositories () {
     }, [])
 
     return (
-        <div>
+        <Container>
             {repositories.map((repo) => <Card key={repo.id} repo={repo} />)}
-        </div>
+        </Container>
     )
 }

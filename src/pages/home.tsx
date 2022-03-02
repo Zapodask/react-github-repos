@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import api from '../services/api'
+import { Container, Box } from '../styles/pages/home'
 
 export default function Home () {
     const [username, setUsername] = useState<string>('')
@@ -19,12 +20,12 @@ export default function Home () {
     }
 
     return (
-        <div>
-            <div>
+        <Container>
+            <Box>
                 <h2>Pesquisar usuário do github</h2>
                 <input type="text" onChange={e => setUsername(e.target.value)} />
                 <button onClick={findUser}>Pesquisar</button>
-            </div>
-        </div>
+            </Box>
+        </Container>
     )
 }
